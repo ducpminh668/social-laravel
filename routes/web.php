@@ -19,6 +19,22 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/add', function() {
+    return \App\User::find(4)->add_friend(1);
+});
+
+Route::get('/accept', function() {
+    return \App\User::find(1)->accept_friend(4);
+});
+
+Route::get('/friends', function() {
+    return \App\User::find(1)->friends();
+});
+
+
+
+
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile/{slug}', [
         'uses' => 'ProfilesController@index',

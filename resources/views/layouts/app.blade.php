@@ -80,6 +80,17 @@
             @yield('content')
         </main>
     </div>
+    <script src="/js/app.js"></script>
+    <script>
+        @if(Session::has('success')) 
+            new Noty({
+                type: 'success',
+                layout: 'topRight',
+                text: '{{ Session::get('success') }}',
+                timeout: 3000
+            }).show()
+        @endif
+    </script>
 </body>
 
 </html>
