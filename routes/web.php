@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/add', function() {
-    return \App\User::find(4)->add_friend(1);
+    return \App\User::find(3)->add_friend(1);
 });
 
 Route::get('/accept', function() {
@@ -29,6 +29,18 @@ Route::get('/accept', function() {
 
 Route::get('/friends', function() {
     return \App\User::find(1)->friends();
+});
+
+Route::get('/pending_friends', function() {
+    return \App\User::find(3)->pending_friend_requests();
+});
+
+Route::get('/ids', function() {
+    return \App\User::find(1)->friends_ids();
+});
+
+Route::get('/is', function() {
+    return \App\User::find(1)->is_friends_with(5);
 });
 
 
