@@ -22,6 +22,13 @@
         </div>
       </div>
     </div>
+
+    <div class="card mt-4">
+      <div class="card-body">
+        <friend :profile_user_id={{ $user->id }}></friend>
+      </div>
+    </div>
+
     <div class="card mt-4">
       <div class="card-header">
         <p class="text-center">
